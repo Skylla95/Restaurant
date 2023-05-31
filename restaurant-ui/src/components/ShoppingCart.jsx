@@ -3,7 +3,8 @@ import { Offcanvas, Stack } from "react-bootstrap";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { formatCurrency } from "../utilities/FormatCurrency";
 import { CartItem } from "./CartItem";
-import storeItems from "../data/items.json";
+const response = await fetch("http://localhost:8080/items");
+const storeItems = await response.json();
 
 export function ShoppingCart({ isOpen }) {
   const { closeCart, cartItems } = useShoppingCart();

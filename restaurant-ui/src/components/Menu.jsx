@@ -1,11 +1,13 @@
 import MenuItem from "./MenuItem";
-import items from "../data/items.json";
+
+const response = await fetch("http://localhost:8080/items");
+const menuItemsList = await response.json();
 
 const Menu = (props) => {
   return (
     <div>
       Ez lesz a {props.restaurantName} menuje
-      {items.map((item) => {
+      {menuItemsList.map((item) => {
         return (
           <div>
             <MenuItem

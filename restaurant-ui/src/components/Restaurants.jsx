@@ -1,13 +1,13 @@
 import Restaurant from "./Restaurant";
-import getRestaurants from "./getRestaurants";
 import styles from "../styles/PizzaList.module.css";
 
-const data = getRestaurants().slice(0, 100);
+const response = await fetch("http://localhost:8080/restaurants");
+const restaurantsList = await response.json();
 
 const Restaurants = () => {
   return (
     <div className={styles.container}>
-      {data.map((restaurant) => {
+      {restaurantsList.map((restaurant) => {
         if (
           new Date().getHours() >= restaurant.openingHour &&
           new Date().getHours() < restaurant.closingHour
@@ -16,7 +16,7 @@ const Restaurants = () => {
             <div className={styles.wrapper}>
               <Restaurant
                 restaurantName={restaurant.name}
-                restaurantImage={restaurant.imageSource}
+                restaurantImage={restaurant.imgUrl}
               />
             </div>
           );

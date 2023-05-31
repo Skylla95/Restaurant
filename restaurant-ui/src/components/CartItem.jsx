@@ -1,8 +1,10 @@
 import React from "react";
 import { Button, Stack } from "react-bootstrap";
 import { useShoppingCart } from "../context/ShoppingCartContext";
-import storeItems from "../data/items.json";
 import { formatCurrency } from "../utilities/FormatCurrency";
+
+const response = await fetch("http://localhost:8080/items");
+const storeItems = await response.json();
 
 export function CartItem({ id, quantity }) {
   const { removeFromCart } = useShoppingCart();
