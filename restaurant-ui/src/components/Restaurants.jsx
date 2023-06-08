@@ -17,6 +17,7 @@ const Restaurants = () => {
               <Restaurant
                 restaurantName={restaurant.name}
                 restaurantImage={restaurant.imgUrl}
+                restaurantMenu={restaurant.menu}
               />
             </div>
           );

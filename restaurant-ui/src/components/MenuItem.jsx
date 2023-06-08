@@ -44,19 +44,6 @@ const MenuItem = ({ id, name, price, imgUrl }) => {
           </div>
         )}
       </Card.Title>
-      {/* <div>
-        {" "}
-        {props.itemName}
-        <img
-          src={props.itemImage}
-          width={50}
-          height={50}
-          alt={props.restaurantName}
-        ></img>{" "}
-        {props.itemPrice}
-        <button>+</button>
-        <label htmlFor=""></label>
-      </div> */}
     </Card.Body>
   );
 };

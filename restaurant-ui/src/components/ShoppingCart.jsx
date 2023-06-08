@@ -3,8 +3,16 @@ import { Offcanvas, Stack } from "react-bootstrap";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { formatCurrency } from "../utilities/FormatCurrency";
 import { CartItem } from "./CartItem";
-const response = await fetch("http://localhost:8080/items");
-const storeItems = await response.json();
+
+const restaurants = await fetch("http://localhost:8080/restaurants");
+const restaurantsList = await restaurants.json();
+
+var menus = restaurantsList.map((restaurants) => restaurants.menu);
+var menu = menus[0];
+for (let i = 1; i < menus.length; i++) {
+  menu = menu.concat(menus[i]);
+}
+console.log(menu);
 
 export function ShoppingCart({ isOpen }) {
   const { closeCart, cartItems } = useShoppingCart();
@@ -22,14 +30,14 @@ export function ShoppingCart({ isOpen }) {
             Order{" "}
             {formatCurrency(
               cartItems.reduce((total, cartItem) => {
-                const item = storeItems.find((i) => i.id === cartItem.id);
+                const item = menu.find((i) => i.id === cartItem.id);
                 return total + (item?.price || 0) * cartItem.quantity;
               }, 0)
             )}
             <br />
             Shipping{" "}
             {cartItems.reduce((total, cartItem) => {
-              const item = storeItems.find((i) => i.id === cartItem.id);
+              const item = menu.find((i) => i.id === cartItem.id);
               return total + (item?.price || 0) * cartItem.quantity;
             }, 0) < 50
               ? "10$"

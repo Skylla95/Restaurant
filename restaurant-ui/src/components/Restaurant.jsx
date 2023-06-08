@@ -17,7 +17,12 @@ const Restaurant = (props) => {
         onClick={toggle}
         display={props.restaurantClosed}
       />
-      {open && <Menu restaurantName={props.restaurantName} />}
+      {open && (
+        <Menu
+          restaurantName={props.restaurantName}
+          restaurantMenu={props.restaurantMenu}
+        />
+      )}
     </Card>
   );
 };

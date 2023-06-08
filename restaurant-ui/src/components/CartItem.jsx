@@ -3,12 +3,19 @@ import { Button, Stack } from "react-bootstrap";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { formatCurrency } from "../utilities/FormatCurrency";
 
-const response = await fetch("http://localhost:8080/items");
-const storeItems = await response.json();
+const restaurants = await fetch("http://localhost:8080/restaurants");
+const restaurantsList = await restaurants.json();
+
+var menus = restaurantsList.map((restaurants) => restaurants.menu);
+var menu = menus[0];
+for (let i = 1; i < menus.length; i++) {
+  menu = menu.concat(menus[i]);
+}
+console.log(menu);
 
 export function CartItem({ id, quantity }) {
   const { removeFromCart } = useShoppingCart();
-  const item = storeItems.find((i) => i.id === id);
+  const item = menu.find((i) => i.id === id);
   if (item == null) return null;
 
   return (
