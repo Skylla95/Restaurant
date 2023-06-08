@@ -1,6 +1,6 @@
 import { Card, Button } from "react-bootstrap";
-import { useShoppingCart } from "../context/ShoppingCartContext";
-import { formatCurrency } from "../utilities/FormatCurrency";
+import { useShoppingCart } from "../../context/ShoppingCartContext";
+import { formatCurrency } from "../../utilities/FormatCurrency";
 
 const MenuItem = ({ id, name, price, imgUrl }) => {
   const {

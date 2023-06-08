@@ -1,14 +1,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import Contact from "./components/Contact";
-import Restaurants from "./components/Restaurants";
+import Navbar from "./components/navbar/Navbar";
+import Home from "./components/home/Home";
+import Contact from "./components/contact/Contact";
+import Restaurants from "./components/restaurant/Restaurants";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 import { AuthProvider } from "./context/AuthContext";
-import SignIn from "./components/SignIn";
-import Signup from "./components/Signup";
-import ForgotPassword from "./components/ForgotPassword";
+import SignIn from "./components/login/SignIn";
+import Signup from "./components/login/Signup";
+import ForgotPassword from "./components/login/ForgotPassword";
 function App() {
   return (
     <ShoppingCartProvider>

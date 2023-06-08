@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import styles from "../styles/Navbar.module.css";
-import { useShoppingCart } from "../context/ShoppingCartContext";
+import styles from "./Navbar.module.css";
+import { useShoppingCart } from "../../context/ShoppingCartContext";
 
 function Navbar() {
   const { openCart, cartQuantity } = useShoppingCart();

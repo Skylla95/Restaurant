@@ -1,7 +1,7 @@
 import React from "react";
 import { Offcanvas, Stack } from "react-bootstrap";
-import { useShoppingCart } from "../context/ShoppingCartContext";
-import { formatCurrency } from "../utilities/FormatCurrency";
+import { useShoppingCart } from "../../context/ShoppingCartContext";
+import { formatCurrency } from "../../utilities/FormatCurrency";
 import { CartItem } from "./CartItem";
 
 const restaurants = await fetch("http://localhost:8080/restaurants");

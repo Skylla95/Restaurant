@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Stack } from "react-bootstrap";
-import { useShoppingCart } from "../context/ShoppingCartContext";
-import { formatCurrency } from "../utilities/FormatCurrency";
+import { useShoppingCart } from "../../context/ShoppingCartContext";
+import { formatCurrency } from "../../utilities/FormatCurrency";
 
 const restaurants = await fetch("http://localhost:8080/restaurants");
 const restaurantsList = await restaurants.json();

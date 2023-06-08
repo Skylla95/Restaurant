@@ -1,5 +1,5 @@
 import Restaurant from "./Restaurant";
-import styles from "../styles/PizzaList.module.css";
+import styles from "./PizzaList.module.css";
 
 const response = await fetch("http://localhost:8080/restaurants");
 const restaurantsList = await response.json();
