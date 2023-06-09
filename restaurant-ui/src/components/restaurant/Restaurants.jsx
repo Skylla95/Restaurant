@@ -1,25 +1,22 @@
 import Restaurant from "./Restaurant";
-import styles from "./PizzaList.module.css";
 
 const response = await fetch("http://localhost:8080/restaurants");
 const restaurantsList = await response.json();
 
 const Restaurants = () => {
   return (
-    <div className={styles.container}>
+    <div className="d-flex flex-wrap justify-content-around">
       {restaurantsList.map((restaurant) => {
         if (
           new Date().getHours() >= restaurant.openingHour &&
           new Date().getHours() < restaurant.closingHour
         )
           return (
-            <div className={styles.wrapper}>
-              <Restaurant
-                restaurantName={restaurant.name}
-                restaurantImage={restaurant.imgUrl}
-                restaurantMenu={restaurant.menu}
-              />
-            </div>
+            <Restaurant
+              restaurantName={restaurant.name}
+              restaurantImage={restaurant.imgUrl}
+              restaurantMenu={restaurant.menu}
+            />
           );
         else return null;
       })}

@@ -7,11 +7,20 @@ const Restaurant = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <Card>
+    <Card
+      style={{
+        flex: "1 1 0",
+        maxWidth: "25rem",
+        maxHeight: "25rem",
+        minWidth: "18rem",
+        minHeight: "18rem",
+        margin: "1rem",
+      }}
+    >
       <Card.Img
         variant="top"
         src={props.restaurantImage}
-        height="200px"
+        height="300px"
         style={{ objectFit: "cover" }}
         onClick={handleShow}
       />
