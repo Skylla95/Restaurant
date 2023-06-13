@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+const Menu = require("./MenuModel")
 
 const menuSchema = new mongoose.Schema({
     id: String,
