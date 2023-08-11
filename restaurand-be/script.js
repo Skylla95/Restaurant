@@ -2,10 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const app = express();
-const itemsList = require("./data/items.json")
-const restaurantsList = require("./data/restaurants.json")
 const Restaurant = require("./RestaurantModel")
-const Menu = require("./MenuModel")
 const mongoose = require("mongoose")
 
 mongoose.connect("mongodb+srv://norbivitus:GnEVoVydOuI8k6M7@cluster0.on4klzg.mongodb.net/")
